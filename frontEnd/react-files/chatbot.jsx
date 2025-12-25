@@ -116,7 +116,7 @@ function Chatbot() {
 
     try {
       
-      const response = await axios.post("https://ethio-animal-health.onrender.com/api/chatbot", { message: chatcustomization + userInput });
+      const response = await axios.post("http://localhost:5700/api/chatbot", { message: chatcustomization + userInput });
       const botResponse = response.data.message;
 
      

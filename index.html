@@ -3,61 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Get Started - Animal Health Advisory System</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/public/stylesheet_files/index.css">
+    <title>Animal Health Advisory System - Better Care for Every Animal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/frontEnd/stylesheet_files/index.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to the Animal Health Advisory System</h1>
-        <p>Your trusted platform for better animal health and care</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-paw"></i>
+                <span class="logo-text">AnimalHealth<span class="logo-highlight">Advisory</span></span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#testimonials" class="nav-link">Testimonials</a>
+                <a href="/frontEnd/html-files/loginpage.html" class="nav-link">Login</a>
+                <div class="language-selector">
+                    <select id="language-selector">
+                        <option value="en">🇺🇸 English</option>
+                        <option value="am">🇪🇹 አማርኛ</option>
+                        <option value="or">🇪🇹 Afaan Oromoo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
 
-        <div class="language-selector">
-            <select id="language-selector">
-                <option value="en">English</option>
-                <option value="am">አማርኛ</option>
-                <option value="or">Afaan Oromoo</option>
-            </select>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Better Health for Every Animal</h1>
+            <p class="hero-subtitle">Connecting farmers with veterinary experts for healthier livestock and sustainable farming</p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>5000+</h3>
+                    <p>Farmers Connected</p>
+                </div>
+                <div class="stat">
+                    <h3>200+</h3>
+                    <p>Veterinary Experts</p>
+                </div>
+                <div class="stat">
+                    <h3>24/7</h3>
+                    <p>Advisory Support</p>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="/join-us.html" class="btn-primary">
+                    <i class="fas fa-user-plus"></i> Join Now - It's Free
+                </a>
+                <a href="#features" class="btn-secondary">
+                    <i class="fas fa-play-circle"></i> See How It Works
+                </a>
+            </div>
         </div>
-        
-    </header>
-
-    <section class="features">
-        <div class="feature-card">
-            <h3>For Farmers</h3>
-            <p>Get expert advice to keep your livestock healthy and productive.</p>
-        </div>
-        <div class="feature-card">
-            <h3>For Veterinarians</h3>
-            <p>Collaborate with farmers and share your expertise to improve animal care.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Resources</h3>
-            <p>Access a wealth of knowledge, articles, and guides tailored to animal health.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Appointments</h3>
-            <p>Schedule and manage appointments efficiently through our platform.</p>
-        </div>
-        <div class="feature-card">
-            <h3>News and Updates</h3>
-            <p>Stay informed with the latest trends and news in animal health.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Ask Questions</h3>
-            <p>Post your questions and get answers from veterinary experts.</p>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
         </div>
     </section>
 
-    <div class="buttons">
-        <a href="/loginpage.html">Login</a>
-        <a href="/join-us.html">Join Us</a>
-    </div>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="section-header">
+            <h2 class="section-title">Everything You Need for Animal Health</h2>
+            <p class="section-subtitle">Comprehensive tools and resources for farmers and veterinarians</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tractor"></i>
+                </div>
+                <h3 class="feature-title">For Farmers</h3>
+                <p class="feature-desc">Get expert advice to keep your livestock healthy, productive and profitable.</p>
+                <div class="feature-highlights">
+                    <span><i class="fas fa-check-circle"></i> Disease Prevention</span>
+                    <span><i class="fas fa-check-circle"></i> Nutrition Guidance</span>
+                    <span><i class="fas fa-check-circle"></i> Emergency Support</span>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-user-md"></i>
+                </div>
+                <h3 class="feature-title">For Veterinarians</h3>
+                <p class="feature-desc">Collaborate with farmers, expand your practice and share your expertise.</p>
+                <div class="feature-highlights">
+                    <span><i class="fas fa-check-circle"></i> Digital Consultations</span>
+                    <span><i class="fas fa-check-circle"></i> Case Management</span>
+                    <span><i class="fas fa-check-circle"></i> Professional Network</span>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-book-medical"></i>
+                </div>
+                <h3 class="feature-title">Health Resources</h3>
+                <p class="feature-desc">Access articles, guides and treatment protocols for common animal conditions.</p>
+                <div class="feature-highlights">
+                    <span><i class="fas fa-check-circle"></i> Treatment Guides</span>
+                    <span><i class="fas fa-check-circle"></i> Preventive Care</span>
+                    <span><i class="fas fa-check-circle"></i> Best Practices</span>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h3 class="feature-title">Smart Appointments</h3>
+                <p class="feature-desc">Schedule, manage and track appointments with our intelligent booking system.</p>
+                <div class="feature-highlights">
+                    <span><i class="fas fa-check-circle"></i> Online Booking</span>
+                    <span><i class="fas fa-check-circle"></i> Reminders</span>
+                    <span><i class="fas fa-check-circle"></i> Visit History</span>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-newspaper"></i>
+                </div>
+                <h3 class="feature-title">News & Alerts</h3>
+                <p class="feature-desc">Stay updated with disease outbreaks, market trends and agricultural news.</p>
+                <div class="feature-highlights">
+                    <span><i class="fas fa-check-circle"></i> Outbreak Alerts</span>
+                    <span><i class="fas fa-check-circle"></i> Market Prices</span>
+                    <span><i class="fas fa-check-circle"></i> Research Updates</span>
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3 class="feature-title">Expert Q&A</h3>
+                <p class="feature-desc">Ask questions and get answers from veterinary experts within hours.</p>
+                <div class="feature-highlights">
+                    <span><i class="fas fa-check-circle"></i> Quick Responses</span>
+                    <span><i class="fas fa-check-circle"></i> Verified Experts</span>
+                    <span><i class="fas fa-check-circle"></i> Community Support</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2025 Animal Health Advisory System. All Rights Reserved.</p>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-container">
+            <div class="cta-content">
+                <h2>Start Your Journey to Better Animal Health</h2>
+                <p>Join thousands of farmers and veterinarians who trust our platform for animal care</p>
+                <div class="cta-buttons">
+                    <a href="/join-us.html" class="btn-cta-primary">
+                        <i class="fas fa-user-plus"></i> Create Free Account
+                    </a>
+                    <a href="/frontEnd/html-files/loginpage.html" class="btn-cta-secondary">
+                        <i class="fas fa-sign-in-alt"></i> Existing User Login
+                    </a>
+                </div>
+                <div class="cta-benefits">
+                    <p><i class="fas fa-check"></i> No credit card required</p>
+                    <p><i class="fas fa-check"></i> Free for individual farmers</p>
+                    <p><i class="fas fa-check"></i> 30-day premium trial for vets</p>
+                </div>
+            </div>
+            <div class="cta-image">
+                <img src="https://images.unsplash.com/photo-1593069567131-53a0614dde1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Veterinary Care">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fas fa-paw"></i>
+                    <span class="logo-text">AnimalHealth<span class="logo-highlight">Advisory</span></span>
+                </div>
+                <p>Connecting farmers with veterinary expertise for healthier animals and sustainable agriculture.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Platform</h4>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How It Works</a>
+                    <a href="#">Pricing</a>
+                    <a href="#">Mobile App</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <a href="#">Blog</a>
+                    <a href="#">Help Center</a>
+                    <a href="#">Community</a>
+                    <a href="#">Partners</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Animal Health Advisory System. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
     </footer>
- 
+
     <script type="module" src="/frontEnd/javascript_files/index.js"></script>
 </body>
 </html>
