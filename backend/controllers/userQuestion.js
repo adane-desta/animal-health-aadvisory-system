@@ -1,13 +1,8 @@
 
-
-
 import UserQuestionModel from '../models/userQuestion.js';
-
-
 const UserQuestion = {
 
     acceptUserQuestion: async (req, res) => {
-
         try {
             const { questionData } = req.body;
             const question = UserQuestionModel.acceptUserQuestion(questionData);
@@ -24,7 +19,7 @@ const UserQuestion = {
        }catch (error) {
          res.status(500).json({ error: "can not serve your request sorry check your browser setting or try again later /@addo" });
        }
-      
+
     },
 
     deleteUserQuestion: async (req, res) => {
