@@ -12,7 +12,6 @@ const LoginController = {
 
             if (user) {
 
-         
                 res.status(200).json( 
                        { 
                         success: true , 
@@ -22,8 +21,6 @@ const LoginController = {
                         phone: user.phone ,          
                         userId: user.type === 'FARMERS' ? user.farmer_id : user.vet_id
                         });
-                       
-
                 
             } else {
                 res.status(401).json({ success: false, message: 'incorrect email or password' });
