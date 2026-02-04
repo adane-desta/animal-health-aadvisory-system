@@ -21,7 +21,7 @@
 
        const getAppointments = async () =>{
 
-            const response = await fetch('https://ethio-animal-health.onrender.com/api/getAppointment');
+            const response = await fetch('http://localhost:5700/api/getAppointment');
 
             const appointments = await response.json(response);
 
@@ -72,7 +72,7 @@
 
             
             
-            const response = await fetch('https://ethio-animal-health.onrender.com/api/getUserQuestion')
+            const response = await fetch('http://localhost:5700/api/getUserQuestion')
 
             const userQuestions = await response.json();
           
@@ -128,7 +128,7 @@
         const getNews = async () => {
             
 
-            const response = await fetch('https://ethio-animal-health.onrender.com/api/news-events?language_code=en')
+            const response = await fetch('http://localhost:5700/api/news-events?language_code=en')
             
             const newsEvents = await response.json();
 
@@ -168,7 +168,7 @@
         // Show resources section
         resourcesNav.addEventListener('click', async () => {
 
-            const response = await fetch('https://ethio-animal-health.onrender.com/api/resources?language_code=en');
+            const response = await fetch('http://localhost:5700/api/resources?language_code=en');
             const resources = await response.json();
 
             contentArea.innerHTML = `
@@ -212,7 +212,7 @@
         async function rejectAppointment(appointment_id) {
 
             try {
-                const response = await fetch(`https://ethio-animal-health.onrender.com/api/delete_appointment/${appointment_id}`, {
+                const response = await fetch(`http://localhost:5700/api/delete_appointment/${appointment_id}`, {
                      method: 'DELETE'
                 });
         

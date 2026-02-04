@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinarian Dashboard - Animal Health Advisory System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../stylesheet_files/vetPage2.css">
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="mobile-header-content">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="logo">VetCare<span>Dashboard</span></h1>
+            <div class="user-profile">
+                <div class="notification-icon" id="mobileNotificationIcon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </div>
+                <span>Dr. Thomas</span>
+                <div class="avatar">DT</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="user-info">
+                    <div class="avatar-large">DT</div>
+                    <div class="user-details">
+                        <h2>Dr. Thomas</h2>
+                        <p class="user-role">Veterinarian</p>
+                    </div>
+                </div>
+                <button class="close-menu" id="closeMenu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" id="appointmentsNav">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Appointments</span>
+                    <span class="notification-badge" id="appointmentsBadge">3</span>
+                </a>
+                <a href="#" class="nav-item" id="questionsNav">
+                    <i class="fas fa-question-circle"></i>
+                    <span>Questions</span>
+                    <span class="notification-badge" id="questionsBadge">5</span>
+                </a>
+                <a href="#" class="nav-item" id="newsNav">
+                    <i class="fas fa-newspaper"></i>
+                    <span>News & Events</span>
+                </a>
+                <a href="#" class="nav-item" id="resourcesNav">
+                    <i class="fas fa-book-medical"></i>
+                    <span>Resources</span>
+                </a>
+                <a href="#" class="nav-item" id="notificationsNav">
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                    <span class="notification-badge" id="notificationsBadge">8</span>
+                </a>
+                <a href="#" class="nav-item" id="accountNav">
+                    <i class="fas fa-user-cog"></i>
+                    <span>Account</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="stats-card">
+                    <h4>Today's Stats</h4>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <p class="stat-number" id="todayAppointments">8</p>
+                                <p class="stat-label">Appointments</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <p class="stat-number" id="todayQuestions">12</p>
+                                <p class="stat-label">Questions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" id="contentArea">
+            <div class="content-header">
+                <h1 class="page-title">Dashboard</h1>
+                <div class="header-actions" id="headerActions">
+                    <!-- Buttons will be added dynamically based on section -->
+                    <div class="date-display">
+                        <i class="fas fa-calendar-day"></i>
+                        <span id="currentDate"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Default Dashboard Content -->
+            <div class="dashboard-overview">
+                <div class="welcome-card">
+                    <div class="welcome-content">
+                        <h2>Welcome back, Dr. Thomas</h2>
+                        <p>You have <strong id="pendingAppointmentsCount">8</strong> appointments and <strong id="pendingQuestionsCount">5</strong> unanswered questions today.</p>
+                        <button class="btn-outline" id="viewWeeklyReport">
+                            <i class="fas fa-chart-line"></i>
+                            View Weekly Report
+                        </button>
+                    </div>
+                    <div class="welcome-illustration">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                </div>
+
+                <div class="quick-stats">
+                    <div class="stat-card stat-primary">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div>
+                            <h3>24</h3>
+                            <p>Monthly Appointments</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-success">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>18</h3>
+                            <p>Answered Questions</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-warning">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <div>
+                            <h3>3</h3>
+                            <p>Pending Cases</p>
+                        </div>
+                    </div>
+                    <div class="stat-card stat-info">
+                        <i class="fas fa-users"></i>
+                        <div>
+                            <h3>42</h3>
+                            <p>Active Farmers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scroll Indicator for Mobile -->
+    <div class="scroll-indicator" id="scrollIndicator">
+        <span>Scroll to view more</span>
+        <i class="fas fa-chevron-right"></i>
+    </div>
+
+    <!-- Modals -->
+    <!-- Add News/Event Modal -->
+    <div id="addNewsModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title">Post News or Event</h3>
+                <button class="modal-close" onclick="closeModal('addNewsModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addNewsForm">
+                    <div class="form-group">
+                        <label for="newsTitle">Title *</label>
+                        <input type="text" id="newsTitle" name="title" required placeholder="Enter news/event title">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="newsType">Type *</label>
+                        <select id="newsType" name="type" required>
+                            <option value="">Select type</option>
+                            <option value="news">News</option>
+                            <option value="event">Event</option>
+                            <option value="alert">Alert</option>
+                            <option value="update">Update</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="newsDescription">Description *</label>
+                        <textarea id="newsDescription" name="description" required rows="4" placeholder="Enter detailed description"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="newsDate">Date *</label>
+                        <input type="date" id="newsDate" name="date" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="newsLocation">Location (for events)</label>
+                        <input type="text" id="newsLocation" name="location" placeholder="Enter event location">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="newsImage">Image URL (optional)</label>
+                        <input type="url" id="newsImage" name="image" placeholder="https://example.com/image.jpg">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="important" id="newsImportant">
+                            Mark as important
+                        </label>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal('addNewsModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Post News/Event</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Resource Modal -->
+    <div id="addResourceModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title">Add Resource</h3>
+                <button class="modal-close" onclick="closeModal('addResourceModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="addResourceForm">
+                    <div class="form-group">
+                        <label for="resourceTitle">Title *</label>
+                        <input type="text" id="resourceTitle" name="title" required placeholder="Enter resource title">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resourceType">Type *</label>
+                        <select id="resourceType" name="type" required>
+                            <option value="">Select type</option>
+                            <option value="pdf">PDF Document</option>
+                            <option value="video">Video</option>
+                            <option value="guide">Guide</option>
+                            <option value="manual">Manual</option>
+                            <option value="article">Article</option>
+                            <option value="template">Template</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resourceDescription">Description *</label>
+                        <textarea id="resourceDescription" name="description" required rows="4" placeholder="Enter resource description"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resourceFile">File Upload *</label>
+                        <div class="file-upload">
+                            <input type="file" id="resourceFile" name="file" required accept=".pdf,.doc,.docx,.mp4,.mov,.avi">
+                            <label for="resourceFile" class="file-upload-label">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <span>Choose file</span>
+                            </label>
+                            <div class="file-name" id="fileName">No file chosen</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resourceCategory">Category *</label>
+                        <select id="resourceCategory" name="category" required>
+                            <option value="">Select category</option>
+                            <option value="animal-care">Animal Care</option>
+                            <option value="disease-prevention">Disease Prevention</option>
+                            <option value="treatment">Treatment</option>
+                            <option value="nutrition">Nutrition</option>
+                            <option value="breeding">Breeding</option>
+                            <option value="management">Farm Management</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resourceLanguage">Language *</label>
+                        <select id="resourceLanguage" name="language" required>
+                            <option value="en">English</option>
+                            <option value="es">Spanish</option>
+                            <option value="fr">French</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal('addResourceModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Add Resource</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Account Modal -->
+    <div id="editAccountModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title">Edit Account Information</h3>
+                <button class="modal-close" onclick="closeModal('editAccountModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editAccountForm">
+                    <div class="form-group">
+                        <label for="accountAvatar">Profile Picture</label>
+                        <div class="avatar-upload">
+                            <div class="avatar-preview" id="avatarPreview">
+                                <div class="avatar-preview-image">DT</div>
+                            </div>
+                            <input type="file" id="accountAvatar" name="avatar" accept="image/*" class="avatar-input">
+                            <label for="accountAvatar" class="avatar-upload-label">
+                                <i class="fas fa-camera"></i> Change Photo
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="accountName">Full Name *</label>
+                        <input type="text" id="accountName" name="name" required value="Dr. Thomas">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="accountEmail">Email *</label>
+                        <input type="email" id="accountEmail" name="email" required value="dr.thomas@vetclinic.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="accountPhone">Phone *</label>
+                        <input type="tel" id="accountPhone" name="phone" required value="+1234567890">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="accountSpecialty">Specialty</label>
+                        <input type="text" id="accountSpecialty" name="specialty" value="Large Animal Veterinarian">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="accountClinic">Clinic/Hospital</label>
+                        <input type="text" id="accountClinic" name="clinic" value="Animal Health Center">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="accountAddress">Address</label>
+                        <textarea id="accountAddress" name="address" rows="3">123 Veterinary Street, City, Country</textarea>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal('editAccountModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Change Password Modal -->
+    <div id="changePasswordModal" class="modal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title">Change Password</h3>
+                <button class="modal-close" onclick="closeModal('changePasswordModal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="changePasswordForm">
+                    <div class="form-group">
+                        <label for="currentPassword">Current Password *</label>
+                        <input type="password" id="currentPassword" name="currentPassword" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="newPassword">New Password *</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
+                        <div class="password-strength">
+                            <div class="strength-meter">
+                                <div class="strength-bar"></div>
+                            </div>
+                            <span class="strength-text">Password strength: <span id="strengthText">Weak</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm New Password *</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    </div>
+                    
+                    <div class="password-requirements">
+                        <p><strong>Password must contain:</strong></p>
+                        <ul>
+                            <li id="reqLength">At least 8 characters</li>
+                            <li id="reqUppercase">One uppercase letter</li>
+                            <li id="reqLowercase">One lowercase letter</li>
+                            <li id="reqNumber">One number</li>
+                            <li id="reqSpecial">One special character</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal('changePasswordModal')">Cancel</button>
+                        <button type="submit" class="btn-primary">Change Password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add after the existing modals -->
+
+<!-- Confirmation Modal -->
+<div id="confirmModal" class="modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3 class="modal-title" id="confirmModalTitle">Confirm Action</h3>
+            <button class="modal-close" onclick="closeModal('confirmModal')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="confirmation-content">
+                <div class="confirmation-icon">
+                    <i class="fas fa-exclamation-circle"></i>
+                </div>
+                <p id="confirmModalMessage">Are you sure you want to perform this action?</p>
+            </div>
+            <div class="confirmation-actions">
+                <button class="btn-secondary" id="confirmModalCancel">Cancel</button>
+                <button class="btn-primary" id="confirmModalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Alert Modal -->
+<div id="alertModal" class="modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3 class="modal-title" id="alertModalTitle">Alert</h3>
+            <button class="modal-close" onclick="closeModal('alertModal')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="alert-content">
+                <div class="alert-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <p id="alertModalMessage">Alert message here</p>
+            </div>
+            <div class="alert-actions">
+                <button class="btn-primary" id="alertModalOk">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Email Modal -->
+<div id="emailModal" class="modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3 class="modal-title" id="emailModalTitle">Send Email</h3>
+            <button class="modal-close" onclick="confirmCloseEmailModal()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="emailForm">
+                <div class="form-group">
+                    <label for="emailTo">To</label>
+                    <input type="email" id="emailTo" name="to" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="emailSubject">Subject</label>
+                    <input type="text" id="emailSubject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailBody">Message</label>
+                    <div class="email-editor">
+                        <div class="email-toolbar">
+                            <button type="button" class="toolbar-btn" data-command="bold" title="Bold">
+                                <i class="fas fa-bold"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="italic" title="Italic">
+                                <i class="fas fa-italic"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="insertUnorderedList" title="Bullet List">
+                                <i class="fas fa-list-ul"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="insertOrderedList" title="Numbered List">
+                                <i class="fas fa-list-ol"></i>
+                            </button>
+                            <button type="button" class="toolbar-btn" data-command="createLink" title="Insert Link">
+                                <i class="fas fa-link"></i>
+                            </button>
+                        </div>
+                        <div id="emailBody" class="email-body" contenteditable="true" data-placeholder="Write your message here..."></div>
+                        <input type="hidden" name="body" id="emailBodyHidden">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="emailAttachments">Attachments</label>
+                    <div class="file-upload">
+                        <input type="file" id="emailAttachments" name="attachments" multiple>
+                        <label for="emailAttachments" class="file-upload-label">
+                            <i class="fas fa-paperclip"></i>
+                            <span>Add attachments</span>
+                        </label>
+                        <div class="attachments-list" id="attachmentsList"></div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="confirmCloseEmailModal()">Cancel</button>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Reject Question Modal -->
+<div id="rejectQuestionModal" class="modal">
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3 class="modal-title">Reject Question</h3>
+            <button class="modal-close" onclick="closeModal('rejectQuestionModal')">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form id="rejectQuestionForm">
+                <div class="form-group">
+                    <label for="rejectReason">Reason for rejection</label>
+                    <select id="rejectReason" name="reason" required>
+                        <option value="">Select a reason</option>
+                        <option value="not_related">Not related to veterinary services</option>
+                        <option value="incomplete">Incomplete information</option>
+                        <option value="duplicate">Duplicate question</option>
+                        <option value="inappropriate">Inappropriate content</option>
+                        <option value="other">Other reason</option>
+                    </select>
+                </div>
+                <div class="form-group" id="customReasonGroup" style="display: none;">
+                    <label for="customReason">Please specify</label>
+                    <textarea id="customReason" name="customReason" rows="3" placeholder="Enter your reason..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="rejectMessage">Message to farmer (optional)</label>
+                    <textarea id="rejectMessage" name="message" rows="4" placeholder="Optional message to the farmer..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('rejectQuestionModal')">Cancel</button>
+                    <button type="submit" class="btn-primary">Reject Question</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+    <script src="../javascript_files/vetPage2.js"></script>
+</body>
+</html>

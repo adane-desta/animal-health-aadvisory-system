@@ -10,7 +10,7 @@
     const question = document.getElementById("question").value;
     const address = document.getElementById("address").value;
 
-    const responce = await fetch('https://ethio-animal-health.onrender.com/api/userQuestion', {
+    const responce = await fetch('http://localhost:5700/api/userQuestion', {
 
         method: 'POST',
 
