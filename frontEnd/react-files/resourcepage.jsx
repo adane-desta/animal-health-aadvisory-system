@@ -9,7 +9,7 @@ import '../stylesheet_files/resourcePage.css';
   const [resourceItems, setResourceItems] = useState([]);
   
   useEffect(() => {
-    fetch('https://ethio-animal-health.onrender.com/api/resources?language_code='+document.documentElement.lang) 
+    fetch('http://localhost:5700/api/resources?language_code='+document.documentElement.lang) 
       .then((response) => response.json())
       .then((data) => {
 

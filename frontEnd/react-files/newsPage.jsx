@@ -9,7 +9,7 @@ import '../stylesheet_files/NewsPage.css';
   const [newsItems, setNewsItems] = useState([]);
   
   useEffect(() => {
-    fetch('https://ethio-animal-health.onrender.com/api/news-events?language_code='+document.documentElement.lang) 
+    fetch('http://localhost:5700/api/news-events?language_code='+document.documentElement.lang) 
       .then((response) => response.json())
       .then((data) => {
 
