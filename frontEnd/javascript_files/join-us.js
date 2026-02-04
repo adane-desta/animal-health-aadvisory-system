@@ -52,7 +52,7 @@ farmerForm.addEventListener('submit', async (event) => {
     const password = document.getElementById('farmer-password').value;
 
     if (confirmpassword === password) {
-        const response = await fetch('https://ethio-animal-health.onrender.com/api/new-farmer', {
+        const response = await fetch('http://localhost:5700/api/new-farmer', {
             method: 'POST',
             body: JSON.stringify({
                 newFarmerData: { firstName, lastName, email, password, phone, location }
@@ -88,7 +88,7 @@ doctorForm.addEventListener('submit', async (event) => {
 
     if(confirmpassword === password){
 
-          const response = await fetch('https://ethio-animal-health.onrender.com/api/new-doctor' , {
+          const response = await fetch('http://localhost:5700/api/new-doctor' , {
 
         method: 'POST',
 

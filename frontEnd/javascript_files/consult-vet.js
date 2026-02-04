@@ -24,7 +24,7 @@ document.getElementById("modal-form").addEventListener('submit' , async (event) 
     const farmer_id = localStorage.getItem('userId');
 
     console.log(apptTime);
-    const response = await fetch('https://ethio-animal-health.onrender.com/api/appointments' , {
+    const response = await fetch('http://localhost:5700/api/appointments' , {
 
        method: 'POST',
 
