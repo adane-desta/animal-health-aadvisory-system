@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer's Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        main {
+            padding: 1rem;
+        }
+        .card {
+            background-color: white;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Farmer's Dashboard</h1>
+    </header>
+    <nav>
+        <a href="#advice">Health Advice</a>
+        <a href="#events">Events</a>
+        <a href="#resources">Resources</a>
+        <a href="#register">Register as Vet</a>
+    </nav>
+    <main>
+        <section id="advice" class="card">
+            <h2>Animal Health Advice</h2>
+            <p>Get the latest advice on animal health and care.</p>
+        </section>
+        <section id="events" class="card">
+            <h2>Upcoming Events</h2>
+            <p>Participate in events and workshops.</p>
+        </section>
+        <section id="resources" class="card">
+            <h2>Resources</h2>
+            <p>Access a variety of resources related to animal health.</p>
+        </section>
+        <section id="register" class="card">
+            <h2>Register as a Veterinarian</h2>
+            <p>Join our network of veterinarians and help farmers.</p>
+        </section>
+    </main>
+    <script>
+        // JavaScript can be added here for interactivity
+    </script>
+</body>
+</html>
